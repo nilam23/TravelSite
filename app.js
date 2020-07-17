@@ -26,6 +26,10 @@ app.get("/new", (req, res) => {
     res.render("new");
 });
 
+app.get("/passenger", (req, res) => {
+    res.render("passenger", { passenger: newPassenger });
+});
+
 app.post("/travel", (req, res) => {
     var source = req.body.source;
     var destination = req.body.destination;
@@ -49,7 +53,14 @@ app.post("/travel", (req, res) => {
                     cost = total * parseInt(flight.price);
                     item.cost = cost;
                     item.flight.push(flight);
-                    res.render("passenger", { passenger: item });
+                    item.save((err, newItem) => {
+                        if (err)
+                            console.log(err);
+                        else {
+                            newPassenger = item;
+                            res.redirect("/passenger");
+                        }
+                    });
                 }
             });
         }
