@@ -1,0 +1,57 @@
+<%- include("partials/header") %>
+
+<div id="unique1" class="w3-container w3-teal">
+    <h1>Please fill your credentials</h1>
+</div>
+
+<div class="container p-3 bg-light">
+    <form name="passdata" action="/travel" method="POST">
+        <h4>Travel Information</h4>
+        <div class="form-group">
+            <input type="text" class="form-control" name="source" placeholder="Your current city" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="destination" placeholder="Your destination" required>
+        </div>
+        <div class="form-group">
+            <label>Depart:</label>
+            <input id="unique" type="date" name="departDate">
+            <label>Return:</label>
+            <input id="unique" type="date" name="returnDate">
+            <br>
+            <label>No of Passengers:</label>
+            <input id="unique" type="number" name="totalPassengers">
+            <label>
+                Flight Agency:
+                <select id="unique" name="agency">
+                    <option>Agency</option>
+                    <option>Indigo</option>
+                    <option>Spicejet</option>
+                </select>
+            </label>
+        </div>
+        <h4>Contact Information</h4>
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+            <input type="tel" class="form-control" name="phoneNo" placeholder="Mobile No." required>
+        </div>
+        <div class="form-check">
+            <h4>Choose Travel Document</h4>
+            <label for="civilID">Civil ID</label>
+            <input type="radio" id="civilID" name="id" value="CIVIL ID">
+            <label for="passport">Passport</label>
+            <input type="radio" id="passport" name="id" value="PASSPORT">
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm m-2">Book Now</button>
+    </form>
+    <a class="btn btn-secondary btn-sm m-3" href="/">Cancel Booking</a>
+</div>
+
+
+
+<%- include("partials/footer") %>
