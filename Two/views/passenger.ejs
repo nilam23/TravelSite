@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+
+<div id="pass" class="container">
+    <h6>Dear <%= passenger.name.split(" ")[0] %>, please find the details of your flight from <%= passenger.source %> to
+        <%= passenger.destination %> below</h6>
+    <hr>
+    <h6>Flight id: <%= passenger.flightId %></h6>
+    <h6>Flight name: <%= passenger.flightName %></h6>
+    <h6>Date of departure: <%= passenger.departDate %></h6>
+    <h6>Date of return: <%= passenger.returnDate %></h6>
+    <h6>Document for verification: <%= passenger.document %></h6>
+    <h6>Total passengers: <%= passenger.total %></h6>
+    <hr>
+    <h6>Total amount to be paid: <%= passenger.cost %></h6>
+    <button class="btn btn-info btn-sm m-2">Pay now</button>
+    <a class="btn btn-secondary btn-sm m-2" href="/new">Cancel Booking</a>
+</div>
+
+<%- include("partials/footer") %>
